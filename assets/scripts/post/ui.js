@@ -11,7 +11,24 @@ const createPostFailure = function (response) {
   $('form').trigger('reset')
 }
 
+const showAllSuccess = function (response) {
+  $('#message').text('See All Posts')
+  const allPosts = (`
+    <h3>${response.posts.title}</h3>
+    <h4>${response.posts.placeName}</h4>
+    <h5>${response.posts.cityLoc}${response.posts.stateLoc}</h5>
+    <p>${response.posts.content}</p>
+    `)
+  $('#view-all-posts').text(allPosts)
+}
+
+const showAllFailure = function (response) {
+  $('#message').text('try again')
+}
+
 module.exports = {
   createPostSuccess,
-  createPostFailure
+  createPostFailure,
+  showAllSuccess,
+  showAllFailure
 }

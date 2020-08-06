@@ -12,6 +12,17 @@ const createPost = function (formData) {
   })
 }
 
+const showAll = function () {
+  return $.ajax({
+    url: config.apiUrl + '/post',
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  createPost
+  createPost,
+  showAll
 }

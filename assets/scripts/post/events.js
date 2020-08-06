@@ -13,6 +13,14 @@ const onCreatePost = function (event) {
     .catch(ui.createPostFailure)
 }
 
+const onShowAll = function (event) {
+  event.preventDefault()
+  api.showAll()
+    .then(ui.showAllSuccess)
+    .catch(ui.showAllFailure)
+}
+
 module.exports = {
-  onCreatePost
+  onCreatePost,
+  onShowAll
 }
