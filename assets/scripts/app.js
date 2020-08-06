@@ -14,4 +14,7 @@ $(() => {
   $('#sign-out').on('click', authEvents.onSignOut)
   $('#create-post').on('submit', postEvents.onCreatePost)
   $('#show-all-posts').on('click', postEvents.onShowAll)
+  $('#show-one-post').on('submit', postEvents.onShowOne)
+  $('#delete-one-post').on('submit', postEvents.onDeleteOne)
+  $('#update-post').on('submit', postEvents.onUpdatePost)
 })

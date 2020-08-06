@@ -20,7 +20,40 @@ const onShowAll = function (event) {
     .catch(ui.showAllFailure)
 }
 
+const onShowOne = function (event) {
+  event.preventDefault()
+  const postId = getFormFields(event.target)
+  console.log('formData is', postId)
+  console.log(postId.post.id)
+  api.onePost(postId.post.id)
+    .then(ui.showOneSuccess)
+    .catch(ui.showOneFailure)
+}
+
+const onDeleteOne = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log('Post to delete is', formData)
+  api.deletePost(formData)
+    .then(ui.deleteOneSuccess)
+    .catch(ui.deleteOneFailure)
+}
+
+const onUpdatePost = function (event) {
+  event.preventDefault()
+  const form = event.target
+  const formData = getFormFields(form)
+  console.log('Post to update is', formData)
+  api.updatePost(formData)
+    .then(ui.updateSuccess)
+    .catch(ui.updateFailure)
+}
+
 module.exports = {
   onCreatePost,
-  onShowAll
+  onShowAll,
+  onShowOne,
+  onDeleteOne,
+  onUpdatePost
 }

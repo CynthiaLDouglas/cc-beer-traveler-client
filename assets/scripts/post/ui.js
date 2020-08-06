@@ -1,6 +1,7 @@
 const store = require('../store')
 
-const showPostTemplate = require('../templates/post.handlebars')
+const showPostTemplate = require('../templates/allPost.handlebars')
+const onePostTemplate = require('../templates/onePost.handlebars')
 
 const createPostSuccess = function (response) {
   store.user = response.user
@@ -23,9 +24,33 @@ const showAllFailure = function (response) {
   $('#message').text('try again')
 }
 
+const showOneSuccess = function (response) {
+  $('#message').text('it works')
+  console.log(response)
+  const showOnePost = onePostTemplate({ post: response.post })
+  console.log(showOnePost)
+  $('#view-posts').append(showOnePost)
+}
+
+const showOneFailure = function (response) {
+  $('#message').text('try again')
+}
+
+const deleteOneSuccess = function (response) {
+  $('#message').text('Resource deleted')
+}
+
+const deleteOneFailure = function (response) {
+  $('#message').text('try again')
+}
+
 module.exports = {
   createPostSuccess,
   createPostFailure,
+  deleteOneSuccess,
+  deleteOneFailure,
   showAllSuccess,
-  showAllFailure
+  showAllFailure,
+  showOneSuccess,
+  showOneFailure
 }

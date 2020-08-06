@@ -12,6 +12,17 @@ const createPost = function (formData) {
   })
 }
 
+const onePost = function (postId) {
+  console.log(postId)
+  return $.ajax({
+    url: config.apiUrl + '/posts/' + postId,
+    method: 'GET',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 const showAll = function () {
   return $.ajax({
     url: config.apiUrl + '/post',
@@ -22,7 +33,20 @@ const showAll = function () {
   })
 }
 
+const deletePost = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/posts/',
+    method: 'DELETE',
+    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   createPost,
-  showAll
+  deletePost,
+  showAll,
+  onePost
 }

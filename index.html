@@ -12,25 +12,26 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
+
       <!-- TITLE -->
       <h1>Version 1</h1>
       <!-- User message -->
       <p id="message"></p>
       <!-- Sign Up Form -->
-      <form id="sign-up">Sign Up
-        <input name="credentials[email]" type="text" placeholder="your email here">
-        <input name="credentials[password]" type="text" placeholder="your password here">
-        <input name="credentials[password_confirmation]" placeholder="retype password" type="password">
+      <form id="sign-up">Sign Up<br />
+        <input name="credentials[email]" type="text" placeholder="your email here"><br />
+        <input name="credentials[password]" type="text" placeholder="your password here"><br />
+        <input name="credentials[password_confirmation]" placeholder="retype password" type="password"><br />
         <button class="btn">Submit</button>
       </form>
       <!-- Sign In Form -->
-      <form id="sign-in">Sign In
+      <form id="sign-in">Sign In<br />
         <input name="credentials[email]" type="text" placeholder="your email here"><br />
         <input name="credentials[password]" type="password" placeholder="your password here"><br />
         <button class="btn" type="submit">Sign In!</button>
       </form>
       <!-- Change Password Form -->
-      <form id="change-password"> Change Password
+      <form id="change-password"> Change Password<br />
         <input name="passwords[old]" type="password" placeholder="Enter your old password here"><br />
         <input name="passwords[new]" type="password" placeholder=" Enter your new password here"><br />
         <button class="btn" type="submit">Submit</button>
@@ -38,7 +39,7 @@
       <!-- Sign Out Button -->
       <button class="btn" id="sign-out" type="submit">Sign Out!</button>
       <!-- Create Blog Post Form -->
-      <form id="create-post">Add Blog Post
+      <form id="create-post">Add Blog Post<br />
         <input name="post[title]" type="text" placeholder="Enter your title here"><br />
         <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
         <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
@@ -48,6 +49,28 @@
       </form>
       <!-- Show All Posts Button -->
       <button class="btn" id="show-all-posts">Show All Posts</button>
+      <!-- Div for viewing all or one post -->
       <div id="view-posts"></div>
+      <!-- Form/Button to show one post -->
+      <form id="show-one-post">
+        <input name="post[id]" type="text" placeholder="Enter id to show">
+        <button class="btn" type="submit">Show Post</button>
+      </form>
+      <!-- Form/Button to delete one post -->
+      <form id="delete-one-post">
+        <input name="post[ID]" type="text" placeholder="Enter id to delete">
+        <button class="btn" type="submit">Delete Post</button>
+      </form>
+      <!-- Form/Button to Update Blog Post -->
+      <form id="update-post">Update Blog Post<br />
+        <input name="post[ID]" type="text" placeholder="Enter id to delete"><br />
+        <input name="post[title]" type="text" placeholder="Enter your title here"><br />
+        <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
+        <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
+        <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
+        <input name="post[content]" type="text" placeholder="Enter content here"><br />
+        <button class="btn" type="submit">Update Post</button>
+      </form>
+
     </body>
 </html>
