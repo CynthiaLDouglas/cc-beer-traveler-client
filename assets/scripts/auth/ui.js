@@ -13,6 +13,8 @@ const signInSuccess = function (response) {
   store.user = response.user
   $('#message').text('You are all signed in!')
   $('form').trigger('reset')
+  $('#authenticated').show()
+  $('#unauthenticated').hide()
 }
 
 const signInFailure = function () {
@@ -32,6 +34,8 @@ const changePasswordFailure = function () {
 
 const signOutSuccess = function (response) {
   $('#message').text('You are signed out.')
+  $('#authenticated').hide()
+  $('#unauthenticated').show()
 }
 
 const signOutFailure = function () {
