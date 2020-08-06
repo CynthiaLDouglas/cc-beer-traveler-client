@@ -26,9 +26,7 @@ const showAllFailure = function (response) {
 
 const showOneSuccess = function (response) {
   $('#message').text('it works')
-  console.log(response)
   const showOnePost = onePostTemplate({ post: response.post })
-  console.log(showOnePost)
   $('#view-posts').append(showOnePost)
 }
 
@@ -38,9 +36,20 @@ const showOneFailure = function (response) {
 
 const deleteOneSuccess = function (response) {
   $('#message').text('Resource deleted')
+  $('form').trigger('reset')
 }
 
 const deleteOneFailure = function (response) {
+  $('#message').text('try again')
+}
+
+const updateSuccess = function (response) {
+  $('#message').text('Resource update')
+  // Update w. a handle to print update on screen
+  $('form').trigger('reset')
+}
+
+const updateFailure = function (response) {
   $('#message').text('try again')
 }
 
@@ -52,5 +61,7 @@ module.exports = {
   showAllSuccess,
   showAllFailure,
   showOneSuccess,
-  showOneFailure
+  showOneFailure,
+  updateSuccess,
+  updateFailure
 }

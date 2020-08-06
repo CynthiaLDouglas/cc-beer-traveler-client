@@ -33,11 +33,21 @@ const showAll = function () {
   })
 }
 
-const deletePost = function (data) {
+const deletePost = function (postId) {
   return $.ajax({
-    url: config.apiUrl + '/posts/',
+    url: config.apiUrl + '/posts/' + postId,
     method: 'DELETE',
-    data: data,
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    }
+  })
+}
+
+const updatePost = function (postId, formData) {
+  return $.ajax({
+    url: config.apiUrl + '/posts/' + postId,
+    method: 'PATCH',
+    data: formData,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -48,5 +58,6 @@ module.exports = {
   createPost,
   deletePost,
   showAll,
+  updatePost,
   onePost
 }
