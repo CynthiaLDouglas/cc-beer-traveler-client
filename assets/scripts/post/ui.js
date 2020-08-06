@@ -45,7 +45,6 @@ const deleteOneFailure = function (response) {
 
 const updateSuccess = function (response) {
   $('#message').text('Resource update')
-  // Update w. a handle to print update on screen
   $('form').trigger('reset')
 }
 

@@ -41,7 +41,6 @@ const onUpdatePost = function (event) {
   const form = event.target
   const formData = getFormFields(form)
   const postId = formData.post.id
-  console.log(formData.post.id)
   api.updatePost(postId, formData)
     .then(ui.updateSuccess)
     .catch(ui.updateFailure)

@@ -1,5 +1,9 @@
 @import '~bootstrap/scss/bootstrap';
 
+#authenticated {
+  display: none;
+}
+
 .btn {
   background-color: green;
 }
