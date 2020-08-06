@@ -1,5 +1,7 @@
 const store = require('../store')
 
+const showPostTemplate = require('../templates/post.handlebars')
+
 const createPostSuccess = function (response) {
   store.user = response.user
   $('#message').text('You submitted a post')
@@ -12,14 +14,9 @@ const createPostFailure = function (response) {
 }
 
 const showAllSuccess = function (response) {
-  $('#message').text('See All Posts')
-  const allPosts = (`
-    <h3>${response.posts.title}</h3>
-    <h4>${response.posts.placeName}</h4>
-    <h5>${response.posts.cityLoc}${response.posts.stateLoc}</h5>
-    <p>${response.posts.content}</p>
-    `)
-  $('#view-all-posts').text(allPosts)
+  $('#message').text(`There are ${response.posts.length} posts`)
+  const showAllPost = showPostTemplate({ posts: response.posts })
+  $('#view-posts').append(showAllPost)
 }
 
 const showAllFailure = function (response) {
