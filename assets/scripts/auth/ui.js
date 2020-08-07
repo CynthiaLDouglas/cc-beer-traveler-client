@@ -11,7 +11,7 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#message').text('You are all signed in!')
+  $('#auth-message').text('You are all signed in! Welcome!')
   $('form').trigger('reset')
   $('#authenticated').show()
   $('#unauthenticated').hide()
@@ -23,23 +23,23 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (response) {
-  $('#message').text('Your password has been changed.')
+  $('#auth-message').text('Your password has been changed.')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
-  $('#message').text('Please try again.')
+  $('#auth-message').text('Please try again.')
   $('form').trigger('reset')
 }
 
 const signOutSuccess = function (response) {
-  $('#message').text('You are signed out.')
+  $('#message').text('See you next time.')
   $('#authenticated').hide()
   $('#unauthenticated').show()
 }
 
 const signOutFailure = function () {
-  $('#message').text('Please try again.')
+  $('#auth-message').text('Please try again.')
 }
 
 module.exports = {
