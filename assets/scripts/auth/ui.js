@@ -23,12 +23,12 @@ const signInFailure = function () {
 }
 
 const changePasswordSuccess = function (response) {
-  $('#auth-message').text('Your password has been changed.')
+  $('#modal-message').text('Your password has been changed.')
   $('form').trigger('reset')
 }
 
 const changePasswordFailure = function () {
-  $('#auth-message').text('Please try again.')
+  $('#modal-message').text('Please try again.')
   $('form').trigger('reset')
 }
 
