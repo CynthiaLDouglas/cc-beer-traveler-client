@@ -39,19 +39,18 @@
     <!-- User message -->
     <p id="auth-message"></p>
 
-
-
   <div class="container">
 
-    <div class="row">
-      <button class="btn" data-toggle="collapse" data-target="#create">New Post</button>
-      <button class="btn" data-toggle="collapse" data-target="#delete">Delete a Post</button>
-      <button class="btn" data-toggle="collapse" data-target="#update">Update a Post</button>
-    </div>
+    <!-- buttons to toggle create, delete, and update -->
+        <div class="row">
+          <button class="btn" id="create" data-toggle="collapse" data-target="#create-form">New Post</button>
+          <button class="btn" id="delete" data-toggle="collapse" data-target="#delete-form">Delete a Post</button>
+          <button class="btn" id="update" data-toggle="collapse" data-target="#update-form">Update a Post</button>
+        </div>
 
     <div class="row">
 
-      <div class="collapse" id="create">
+      <div aria-expanded="false" class="collapse" id="create-form">
         <!-- Create Blog Post Form -->
         <form id="create-post">Add Blog Post<br />
           <input name="post[title]" type="text" placeholder="Enter your title here"><br />
@@ -66,7 +65,7 @@
         <!-- Div for viewing all or one post -->
         <div id="view-posts"></div>
 
-      <div id="delete" class="collapse">
+      <div aria-expanded="false" class="collapse" id="delete-form">
         <!-- Form/Button to delete one post -->
         <form id="delete-one-post">
           <input name="post[id]" type="text" placeholder="Enter id to delete">
@@ -74,7 +73,7 @@
         </form>
       </div>
 
-      <div id="update" class="collapse">
+      <div aria-expanded="false" class="collapse" id="update-form">
         <!-- Form/Button to Update Blog Post -->
         <form id="update-post">Update Blog Post<br />
           <input name="post[id]" type="text" placeholder="REQ: Enter id to updated"><br />
