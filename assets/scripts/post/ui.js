@@ -29,14 +29,14 @@ const showAllFailure = function (response) {
 
 const showOneSuccess = function (response) {
   $('#view-posts').empty()
-  $('#auth-message').text('Here you go!')
+  $('#show-modal').text('Here you go!')
   const showOnePost = onePostTemplate({ post: response.post })
-  $('#view-posts').append(showOnePost)
+  $('#show').append(showOnePost)
 }
 
 const showOneFailure = function (response) {
   $('#view-posts').empty()
-  $('#auth-message').text('Please try again.')
+  $('#show-modal').text('Please try again.')
 }
 
 const deleteOneSuccess = function (response) {

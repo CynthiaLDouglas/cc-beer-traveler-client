@@ -20,15 +20,18 @@
   <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 
     <a class="navbar-brand" href="#">CC Beer Traveler</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <!-- Launch Change Password Modal -->
       <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
         Change Password
       </button>
       <!-- Sign Out Button -->
       <button class="btn" id="sign-out" type="submit">Sign Out!</button>
+      <!-- Show All Posts Button -->
+      <button class="btn" id="show-all-posts">Show All Posts</button>
+      <!-- Launch view one post modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal">
+        Search a post
+      </button>
 
   </nav>
     <!-- User message -->
@@ -44,17 +47,8 @@
         <button class="btn" type="submit">Post</button>
       </form>
 
-      <!-- Show All Posts Button -->
-      <button class="btn" id="show-all-posts">Show All Posts</button>
-
       <!-- Div for viewing all or one post -->
       <div id="view-posts"></div>
-
-      <!-- Form/Button to show one post -->
-      <form id="show-one-post">
-        <input name="post[id]" type="text" placeholder="Enter id to show">
-        <button class="btn" type="submit">Show Post</button>
-      </form>
 
       <!-- Form/Button to delete one post -->
       <form id="delete-one-post">
@@ -98,6 +92,33 @@
           </div>
         </div>
       </div>
+
+      <!-- Search Post Modal -->
+      <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="showModalLongTitle">Show Post</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">close &times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form/Button to show one post -->
+              <p id="show-modal"></p>
+              <div id="show"></div>
+              <form id="show-one-post">
+                <input name="post[id]" type="text" placeholder="Enter id to show">
+                <button class="btn" type="submit">Show Post</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
     <!-- unauthenticated -->
