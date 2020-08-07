@@ -15,6 +15,7 @@ const signInSuccess = function (response) {
   $('form').trigger('reset')
   $('#authenticated').show()
   $('#unauthenticated').hide()
+  $('.container').show()
 }
 
 const signInFailure = function () {
@@ -24,6 +25,7 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function (response) {
   $('#modal-message').text('Your password has been changed.')
+  $('.cp-form').hide()
   $('form').trigger('reset')
 }
 

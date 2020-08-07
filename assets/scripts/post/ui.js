@@ -29,6 +29,7 @@ const showAllFailure = function (response) {
 
 const showOneSuccess = function (response) {
   $('#view-posts').empty()
+  $('.s-form').hide()
   $('#show-modal').text('Here you go!')
   const showOnePost = onePostTemplate({ post: response.post })
   $('#show').append(showOnePost)
