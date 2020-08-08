@@ -17,11 +17,11 @@
       <!-- authenticated -->
 <div id="authenticated">
   <!-- NavBar -->
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar">
 
     <a class="navbar-brand" href="#">CC Beer Traveler</a>
       <!-- Launch Change Password Modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
         Change Password
       </button>
       <!-- Sign Out Button -->
@@ -29,7 +29,7 @@
       <!-- Show All Posts Button -->
       <button class="btn" id="show-all-posts">Show All Posts</button>
       <!-- Launch view one post modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#showModal">
+      <button type="button" class="btn" data-toggle="modal" data-target="#showModal">
         Search a post
       </button>
       <!-- Clear Posts Button -->
@@ -39,14 +39,17 @@
     <!-- User message -->
     <p id="auth-message"></p>
 
-  <div class="container">
-
     <!-- buttons to toggle create, delete, and update -->
-        <div class="row">
+        <div class="post-modify-row">
           <button class="btn" id="create" data-toggle="collapse" data-target="#create-form">New Post</button>
           <button class="btn" id="delete" data-toggle="collapse" data-target="#delete-form">Delete a Post</button>
           <button class="btn" id="update" data-toggle="collapse" data-target="#update-form">Update a Post</button>
         </div>
+
+    <!-- most recent posts -->
+    <div class="row-sm-12" id="most-recent"></div>
+
+  <div class="main-container">
 
     <div class="row">
 
@@ -62,19 +65,21 @@
         </form>
       </div>
 
-        <!-- Div for viewing all or one post -->
+<!-- Div for viewing all or one post -->
+    <div class="container">
         <div id="view-posts"></div>
+    </div>
 
+<!-- Form/Button to delete one post -->
       <div aria-expanded="false" class="collapse" id="delete-form">
-        <!-- Form/Button to delete one post -->
         <form id="delete-one-post">
-          <input name="post[id]" type="text" placeholder="Enter id to delete">
+          <input name="post[id]" type="text" placeholder="Enter id to delete"><br />
           <button class="btn" type="submit">Delete Post</button>
         </form>
       </div>
 
+<!-- Form/Button to Update Blog Post -->
       <div aria-expanded="false" class="collapse" id="update-form">
-        <!-- Form/Button to Update Blog Post -->
         <form id="update-post">Update Blog Post<br />
           <input name="post[id]" type="text" placeholder="REQ: Enter id to updated"><br />
           <input name="post[title]" type="text" placeholder="Enter your title here"><br />
@@ -87,6 +92,7 @@
       </div>
     </div>
   </div>
+
       <!-- Change Password Modal -->
       <!-- Modal -->
       <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -128,7 +134,7 @@
               <p id="show-modal"></p>
               <div id="show"></div>
               <form class="s-form" id="show-one-post">
-                <input name="post[id]" type="text" placeholder="Enter id to show">
+                <input name="post[id]" type="text" placeholder="Enter id to show"><br />
                 <button class="btn" type="submit">Show Post</button>
               </form>
             </div>
@@ -155,7 +161,7 @@
       <button class="btn">Sign Up!</button>
     </form>
     <!-- Sign In Form -->
-    <form id="sign-in">Sign In<br />
+    <form style="clear:both" id="sign-in">Sign In<br />
       <input name="credentials[email]" type="text" placeholder="your email here"><br />
       <input name="credentials[password]" type="password" placeholder="your password here"><br />
       <button class="btn" type="submit">Sign In!</button>

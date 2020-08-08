@@ -9,13 +9,32 @@ body {
   background: url(https://i.imgur.com/8CrO8Tv.jpg) no-repeat center center fixed;
   background-color: black;
   background-size: cover;
-  color: lightblue;
+  color: #d4ccce;
   height: 100%;
-  overflow: scroll;
 }
 
 .btn {
-  background-color: green;
+  background-color: #7c3f04;
+  border-radius: 40%;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: #d4ccce;
+  margin: 6px 4px;
+  padding: 5px 10px;
+  float: left;
+}
+
+.btn:hover {
+  background-color: #f46f04;
+}
+
+.navbar {
+  background-color: rgba(13, 4, 4, .5);
+}
+
+.post-modify-row {
+  display:flex;
+  justify-content: flex-end;
+
 }
 
 form {

@@ -1,5 +1,7 @@
 const store = require('../store')
 
+const mostRecentTemplate = require('../templates/recentpost.handlebars')
+
 const signUpSuccess = function (response) {
   $('#message').text('You are all signed up! Try Signing In.')
   $('form').trigger('reset')
@@ -15,7 +17,8 @@ const signInSuccess = function (response) {
   $('form').trigger('reset')
   $('#authenticated').show()
   $('#unauthenticated').hide()
-  $('.container').show()
+  const mostRecentHtml = mostRecentTemplate({ posts: response.posts })
+  $('#most-recent').append(mostRecentHtml)
 }
 
 const signInFailure = function () {
