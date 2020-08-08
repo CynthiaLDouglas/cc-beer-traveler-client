@@ -17,61 +17,81 @@
       <!-- authenticated -->
 <div id="authenticated">
   <!-- NavBar -->
-  <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar">
 
     <a class="navbar-brand" href="#">CC Beer Traveler</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       <!-- Launch Change Password Modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
         Change Password
       </button>
       <!-- Sign Out Button -->
       <button class="btn" id="sign-out" type="submit">Sign Out!</button>
+      <!-- Show All Posts Button -->
+      <button class="btn" id="show-all-posts">Show All Posts</button>
+      <!-- Launch view one post modal -->
+      <button type="button" class="btn" data-toggle="modal" data-target="#showModal">
+        Search a post
+      </button>
+      <!-- Clear Posts Button -->
+      <button class="btn" id="clear-posts">Clear Posts</button>
 
   </nav>
     <!-- User message -->
     <p id="auth-message"></p>
 
-      <!-- Create Blog Post Form -->
-      <form id="create-post">Add Blog Post<br />
-        <input name="post[title]" type="text" placeholder="Enter your title here"><br />
-        <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
-        <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
-        <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
-        <input name="post[content]" type="text" placeholder="Enter content here"><br />
-        <button class="btn" type="submit">Post</button>
-      </form>
+    <!-- buttons to toggle create, delete, and update -->
+        <div class="post-modify-row">
+          <button class="btn" id="create" data-toggle="collapse" data-target="#create-form">New Post</button>
+          <button class="btn" id="delete" data-toggle="collapse" data-target="#delete-form">Delete a Post</button>
+          <button class="btn" id="update" data-toggle="collapse" data-target="#update-form">Update a Post</button>
+        </div>
 
-      <!-- Show All Posts Button -->
-      <button class="btn" id="show-all-posts">Show All Posts</button>
+    <!-- most recent posts -->
+    <div class="row-sm-12" id="most-recent"></div>
 
-      <!-- Div for viewing all or one post -->
-      <div id="view-posts"></div>
+  <div class="main-container">
 
-      <!-- Form/Button to show one post -->
-      <form id="show-one-post">
-        <input name="post[id]" type="text" placeholder="Enter id to show">
-        <button class="btn" type="submit">Show Post</button>
-      </form>
+    <div class="row">
 
-      <!-- Form/Button to delete one post -->
-      <form id="delete-one-post">
-        <input name="post[id]" type="text" placeholder="Enter id to delete">
-        <button class="btn" type="submit">Delete Post</button>
-      </form>
+      <div aria-expanded="false" class="collapse" id="create-form">
+        <!-- Create Blog Post Form -->
+        <form id="create-post">Add Blog Post<br />
+          <input name="post[title]" type="text" placeholder="Enter your title here"><br />
+          <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
+          <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
+          <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
+          <input name="post[content]" type="text" placeholder="Enter content here"><br />
+          <button class="btn" type="submit">Post</button>
+        </form>
+      </div>
 
-      <!-- Form/Button to Update Blog Post -->
-      <form id="update-post">Update Blog Post<br />
-        <input name="post[id]" type="text" placeholder="REQ: Enter id to updated"><br />
-        <input name="post[title]" type="text" placeholder="Enter your title here"><br />
-        <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
-        <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
-        <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
-        <input name="post[content]" type="text" placeholder="Enter content here"><br />
-        <button class="btn" type="submit">Update Post</button>
-      </form>
+<!-- Div for viewing all or one post -->
+    <div class="container">
+        <div id="view-posts"></div>
+    </div>
+
+<!-- Form/Button to delete one post -->
+      <div aria-expanded="false" class="collapse" id="delete-form">
+        <form id="delete-one-post">
+          <input name="post[id]" type="text" placeholder="Enter id to delete"><br />
+          <button class="btn" type="submit">Delete Post</button>
+        </form>
+      </div>
+
+<!-- Form/Button to Update Blog Post -->
+      <div aria-expanded="false" class="collapse" id="update-form">
+        <form id="update-post">Update Blog Post<br />
+          <input name="post[id]" type="text" placeholder="REQ: Enter id to updated"><br />
+          <input name="post[title]" type="text" placeholder="Enter your title here"><br />
+          <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
+          <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
+          <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
+          <input name="post[content]" type="text" placeholder="Enter content here"><br />
+          <button class="btn" type="submit">Update Post</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
       <!-- Change Password Modal -->
       <!-- Modal -->
@@ -87,7 +107,7 @@
             <div class="modal-body">
               <!-- Change Password Form -->
               <p id="modal-message"></p>
-              <form id="change-password">
+              <form class="cp-form" id="change-password">
                 <input name="passwords[old]" type="password" placeholder="Enter your old password here">
                 <input name="passwords[new]" type="password" placeholder=" Enter your new password here">
                 <button class="btn" type="submit">Change Password</button>
@@ -98,6 +118,33 @@
           </div>
         </div>
       </div>
+
+      <!-- Search Post Modal -->
+      <div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="showModalLongTitle">Show Post</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">close &times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Form/Button to show one post -->
+              <p id="show-modal"></p>
+              <div id="show"></div>
+              <form class="s-form" id="show-one-post">
+                <input name="post[id]" type="text" placeholder="Enter id to show"><br />
+                <button class="btn" type="submit">Show Post</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
     </div>
 
     <!-- unauthenticated -->
@@ -114,7 +161,7 @@
       <button class="btn">Sign Up!</button>
     </form>
     <!-- Sign In Form -->
-    <form id="sign-in">Sign In<br />
+    <form style="clear:both" id="sign-in">Sign In<br />
       <input name="credentials[email]" type="text" placeholder="your email here"><br />
       <input name="credentials[password]" type="password" placeholder="your password here"><br />
       <button class="btn" type="submit">Sign In!</button>

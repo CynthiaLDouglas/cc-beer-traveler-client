@@ -4,6 +4,7 @@
 // const example = require('./example')
 const authEvents = require('./auth/events')
 const postEvents = require('./post/events')
+const buttonEvents = require('./button/events')
 // use require without a reference to ensure a file is bundled
 // require('./example')
 
@@ -17,4 +18,8 @@ $(() => {
   $('#show-one-post').on('submit', postEvents.onShowOne)
   $('#delete-one-post').on('submit', postEvents.onDeleteOne)
   $('#update-post').on('submit', postEvents.onUpdatePost)
+  $('#clear-posts').on('click', buttonEvents.onClearPost)
+  $('#create').on('click', buttonEvents.toCreatePost)
+  $('#delete').on('click', buttonEvents.toDeletePost)
+  $('#update').on('click', buttonEvents.toUpdatePost)
 })
