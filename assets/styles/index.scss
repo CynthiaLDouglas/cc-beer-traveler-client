@@ -20,7 +20,6 @@ body {
   color: #d4ccce;
   margin: 6px 4px;
   padding: 5px 10px;
-  float: left;
 }
 
 .btn:hover {
@@ -39,4 +38,29 @@ body {
 
 form {
   margin: 25px;
+}
+
+main {
+  @include make-container;
+
+  section {
+    @include make-col-ready;
+    @include media-breakpoint-up(xl) {
+      @include make-col(6);
+    }
+    @include media-breakpoint-up(lg) {
+      @include make-col(4);
+    }
+    background: rgba(13, 4, 4, .5);
+    border: 1px solid;
+    color: black;
+    cursor: pointer;
+    margin: -1px;
+    outline: none;
+    padding: 1rem;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
 }

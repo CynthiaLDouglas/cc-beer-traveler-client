@@ -6,17 +6,20 @@ const onePostTemplate = require('../templates/onePost.handlebars')
 const createPostSuccess = function (response) {
   store.post = response.post
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('You successfully submitted a post.')
   $('form').trigger('reset')
 }
 
 const createPostFailure = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('Sorry. Please try to submit again.')
 }
 
 const showAllSuccess = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text(`There are ${response.posts.length} posts.`)
   const showAllPost = showPostTemplate({ posts: response.posts })
   $('#view-posts').append(showAllPost)
@@ -24,12 +27,14 @@ const showAllSuccess = function (response) {
 
 const showAllFailure = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('Please try again.')
 }
 
 const showOneSuccess = function (response) {
   $('#view-posts').empty()
   $('.s-form').hide()
+  $('#most-recent').empty()
   $('#show-modal').text('Here you go!')
   const showOnePost = onePostTemplate({ post: response.post })
   $('#show').append(showOnePost)
@@ -37,28 +42,33 @@ const showOneSuccess = function (response) {
 
 const showOneFailure = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#show-modal').text('Please try again.')
 }
 
 const deleteOneSuccess = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('Your post has been deleted.')
   $('form').trigger('reset')
 }
 
 const deleteOneFailure = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('Please try again.')
 }
 
 const updateSuccess = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('Your post has been updated.')
   $('form').trigger('reset')
 }
 
 const updateFailure = function (response) {
   $('#view-posts').empty()
+  $('#most-recent').empty()
   $('#auth-message').text('Please try again.')
 }
 

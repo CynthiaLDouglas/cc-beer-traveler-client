@@ -17,6 +17,7 @@ const signInSuccess = function (response) {
   $('form').trigger('reset')
   $('#authenticated').show()
   $('#unauthenticated').hide()
+  $('#most-recent').empty()
   const mostRecentHtml = mostRecentTemplate({ posts: response.posts })
   $('#most-recent').append(mostRecentHtml)
 }
