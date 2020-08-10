@@ -1,10 +1,14 @@
 {{#each posts as |post|}}
-  <section data-id="{{post.id}}">
+  <section>
     <h3>{{post.title}}</h3>
     <h4>{{post.placeName}}</h4>
     <h5>{{post.cityLoc}}{{post.stateLoc}}</h5>
     <p>{{post.content}}</p>
+<<<<<<< HEAD
     <p>{{post.id}}</p>
+=======
+    <button class="btn delete-book" data-id="{{post._id}}" type="submit">Delete Post</button>
+>>>>>>> basicStyling
   </section>
 
     {{/each}}
