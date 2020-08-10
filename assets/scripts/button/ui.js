@@ -5,12 +5,11 @@ const clearPost = () => {
 }
 
 const onlyCreate = () => {
-  $('#update-form').collapse('hide')
+  $('#view-posts').empty()
   $('#most-recent').empty()
 }
 
 const onlyDelete = () => {
-  $('#update-form').collapse('hide')
   $('#create-form').collapse('hide')
   $('#most-recent').empty()
 }

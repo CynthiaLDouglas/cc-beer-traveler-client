@@ -33,12 +33,11 @@ const showAllFailure = function (response) {
 
 const showOneSuccess = function (response) {
   $('#view-posts').empty()
-  $('form').trigger('reset')
-  $('#show-modal').text('Enjoy!')
   $('#most-recent').empty()
   $('#auth-message').text('Enjoy!')
   const showOnePost = onePostTemplate({ post: response.post })
   $('#view-posts').append(showOnePost)
+  $('form').trigger('reset')
 }
 
 const showOneFailure = function (response) {

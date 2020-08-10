@@ -2,7 +2,6 @@ const ui = require('./ui')
 
 const onClearPost = (event) => {
   event.preventDefault()
-  console.log(event)
   ui.clearPost()
 }
 

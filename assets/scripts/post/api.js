@@ -13,7 +13,6 @@ const createPost = function (formData) {
 }
 
 const onePost = function (postId) {
-  console.log(postId)
   return $.ajax({
     url: config.apiUrl + '/posts/' + postId,
     method: 'GET',

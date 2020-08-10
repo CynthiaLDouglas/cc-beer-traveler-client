@@ -48,7 +48,7 @@ main {
     @include media-breakpoint-up(xl) {
       @include make-col(4);
     }
-    background: rgba(13, 4, 4, .5);
+    background: rgba(51, 26, 4, .5);
     border: 1px solid;
     color: #d4ccce;
     cursor: pointer;
