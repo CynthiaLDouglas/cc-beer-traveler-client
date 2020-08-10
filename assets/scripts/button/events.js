@@ -17,6 +17,7 @@ const toUpdatePost = (event) => {
   event.preventDefault()
   ui.onlyUpdate()
 }
+
 module.exports = {
   onClearPost,
   toCreatePost,

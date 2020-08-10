@@ -35,19 +35,13 @@ const onDeleteOne = function (event) {
     .catch(ui.deleteOneFailure)
 }
 
-// const onDeleteOne = function (event) {
-//   event.preventDefault()
-//   const postId = getFormFields(event.target)
-//   api.deletePost(postId.post.id)
-//     .then(ui.deleteOneSuccess)
-//     .catch(ui.deleteOneFailure)
-// }
-
 const onUpdatePost = function (event) {
   event.preventDefault()
+  const postId = $(event.target).data('id')
   const form = event.target
   const formData = getFormFields(form)
-  const postId = formData.post.id
+  console.log(postId)
+  console.log(formData)
   api.updatePost(postId, formData)
     .then(ui.updateSuccess)
     .catch(ui.updateFailure)

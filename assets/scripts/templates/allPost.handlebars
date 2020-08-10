@@ -4,11 +4,11 @@
     <h4>{{post.placeName}}</h4>
     <h5>{{post.cityLoc}}{{post.stateLoc}}</h5>
     <p>{{post.content}}</p>
-<<<<<<< HEAD
-    <p>{{post.id}}</p>
-=======
-    <button class="btn delete-book" data-id="{{post._id}}" type="submit">Delete Post</button>
->>>>>>> basicStyling
+    <p>{{post._id}}</p>
+      <button class="btn delete"data-toggle="collapse" data-target=".delete-confirm"> Delete this post </button>
   </section>
+  <div aria-expanded="false" class="collapse delete-confirm">Are you sure?
+    <button class="btn delete-post" type="submit" data-id="{{post._id}}">Delete Post</button>
+  </div>
 
     {{/each}}

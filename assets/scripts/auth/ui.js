@@ -42,6 +42,8 @@ const signOutSuccess = function (response) {
   $('#message').text('See you next time.')
   $('#authenticated').hide()
   $('#unauthenticated').show()
+  $('#create-form').collapse('hide')
+  $('#most-recent').empty()
 }
 
 const signOutFailure = function () {
