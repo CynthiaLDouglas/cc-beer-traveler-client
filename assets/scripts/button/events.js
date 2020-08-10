@@ -2,6 +2,7 @@ const ui = require('./ui')
 
 const onClearPost = (event) => {
   event.preventDefault()
+  console.log(event)
   ui.clearPost()
 }
 
@@ -17,6 +18,7 @@ const toUpdatePost = (event) => {
   event.preventDefault()
   ui.onlyUpdate()
 }
+
 module.exports = {
   onClearPost,
   toCreatePost,

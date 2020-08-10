@@ -5,7 +5,6 @@ const clearPost = () => {
 }
 
 const onlyCreate = () => {
-  $('#delete-form').collapse('hide')
   $('#update-form').collapse('hide')
   $('#most-recent').empty()
 }
@@ -17,7 +16,6 @@ const onlyDelete = () => {
 }
 
 const onlyUpdate = () => {
-  $('#delete-form').collapse('hide')
   $('#create-form').collapse('hide')
   $('#most-recent').empty()
 }

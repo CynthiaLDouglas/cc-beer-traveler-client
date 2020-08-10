@@ -3,5 +3,17 @@
     <h4>{{post.placeName}}</h4>
     <h5>{{post.cityLoc}}{{post.stateLoc}}</h5>
     <p>{{post.content}}</p>
-    <button class="btn delete-book" type="submit" data-id="{{post._id}}">Delete Post</button>
+    <button class="btn delete-post" type="submit" data-id="{{post._id}}">Delete Post</button>
+    <!-- <button class="btn update-book" type="submit" data-id="{{post._id}}">Update Post</button> -->
+    <button class="btn update-post" id="update" data-toggle="collapse" data-target="#update-form">Update a Post</button>
   </section>
+  <div aria-expanded="false" class="collapse" id="update-form">
+    <form id="update-one-post">Update Blog Post<br />
+      <input name="post[title]" type="text" placeholder="Enter your title here"><br />
+      <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
+      <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
+      <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
+      <input name="post[content]" type="text" placeholder="Enter content here"><br />
+      <button class="btn" type="submit" data-id="{{post._id}}">Update Post</button>
+    </form>
+  </div>

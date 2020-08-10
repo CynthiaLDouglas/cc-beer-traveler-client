@@ -35,14 +35,6 @@ const onDeleteOne = function (event) {
     .catch(ui.deleteOneFailure)
 }
 
-// const onDeleteOne = function (event) {
-//   event.preventDefault()
-//   const postId = getFormFields(event.target)
-//   api.deletePost(postId.post.id)
-//     .then(ui.deleteOneSuccess)
-//     .catch(ui.deleteOneFailure)
-// }
-
 const onUpdatePost = function (event) {
   event.preventDefault()
   const form = event.target

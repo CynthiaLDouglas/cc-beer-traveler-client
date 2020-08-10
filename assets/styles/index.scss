@@ -46,14 +46,11 @@ main {
   section {
     @include make-col-ready;
     @include media-breakpoint-up(xl) {
-      @include make-col(6);
-    }
-    @include media-breakpoint-up(lg) {
       @include make-col(4);
     }
     background: rgba(13, 4, 4, .5);
     border: 1px solid;
-    color: black;
+    color: #d4ccce;
     cursor: pointer;
     margin: -1px;
     outline: none;
