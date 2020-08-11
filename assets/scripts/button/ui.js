@@ -3,7 +3,7 @@ const clearPost = () => {
   $('#view-posts').empty()
   $('#most-recent').empty()
   $('#auth-message').text('All clear! Pour a beer!')
-  $('img').show()
+  $('#create-form').collapse('hide')
 }
 
 const onlyCreate = () => {
