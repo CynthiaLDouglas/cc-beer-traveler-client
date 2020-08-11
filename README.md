@@ -12,13 +12,7 @@ wanted to do this project, or came up with this idea.
 
 ## Planning Story
 
-Lorem ipsum dolor amet cloud bread letterpress squid actually, single-origin
-coffee williamsburg af poutine fingerstache austin semiotics paleo man braid
-vexillologist. Tumeric literally banjo pickled disrupt cold-pressed thundercats
-shoreditch try-hard health goth intelligentsia pop-up small batch skateboard
-farm-to-table. Meh tofu fam, direct trade tattooed stumptown etsy everyday
-carry activated charcoal. Neutra cornhole polaroid literally salvia, listicle
-tofu.
+Over the course of our relationship, my wife and I have grown into very knowledgeable - dare I say it; beer drinkers. The knowledge that we've been able to gain over the hopped up beverage is impressive at the very least. We have lots of fun travelling to different breweries around the country. I began this process by talking to my wife about what she would want in a blog site. I think crafted a version one of the project based on what was on her list of must haves. Once I crafted a list of user stories based on what I expected to be done by the deadline, I start on the API. After cofirming that the routes and models work with curl scripts. I began to connect each user action to the client. I continued to complete all CRUD actions and use some styling to personalize the web application. I incorporated modals using HTML and Bootstrap and CSS to further style the site. Handlebars was used to display the posts added to the database on the client. The plan moving forward to is to continue adding features outlined in the unsolved problems section.
 
 ### User Stories
 
