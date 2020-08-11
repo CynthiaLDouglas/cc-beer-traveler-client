@@ -1,10 +1,10 @@
 {{#each posts as |post|}}
   <section>
-    <h3>{{post.title}}</h3>
-    <h4>{{post.placeName}}</h4>
-    <h5>{{post.cityLoc}}{{post.stateLoc}}</h5>
-    <p>{{post.content}}</p>
-    <p>{{post._id}}</p>
+    <h1>Title: {{post.title}}</h3>
+    <p>Post ID: {{post._id}}</p>
+    <h3>Company Name: {{post.placeName}}</h4>
+    <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h5>
+    <p>Review:<br />{{post.content}}</p>
       <button class="btn delete"data-toggle="collapse" data-target=".delete-confirm"> Delete this post </button>
   </section>
   <div aria-expanded="false" class="collapse delete-confirm">Are you sure?

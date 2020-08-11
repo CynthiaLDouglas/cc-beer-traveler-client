@@ -2,11 +2,15 @@
 const clearPost = () => {
   $('#view-posts').empty()
   $('#most-recent').empty()
+  $('#auth-message').text('All clear! Pour a beer!')
+  $('img').show()
 }
 
 const onlyCreate = () => {
   $('#view-posts').empty()
   $('#most-recent').empty()
+  $('#auth-message').text('You are ready to submit a post!')
+  $('img').hide()
 }
 
 const onlyDelete = () => {

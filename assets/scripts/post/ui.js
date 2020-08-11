@@ -9,6 +9,7 @@ const createPostSuccess = function (response) {
   $('#most-recent').empty()
   $('#auth-message').text('You successfully submitted a post.')
   $('form').trigger('reset')
+  $('img').show()
 }
 
 const createPostFailure = function (response) {
@@ -23,6 +24,8 @@ const showAllSuccess = function (response) {
   $('#auth-message').text(`There are ${response.posts.length} posts.`)
   const showAllPost = showPostTemplate({ posts: response.posts })
   $('#view-posts').append(showAllPost)
+  $('#create-form').collapse('hide')
+  $('img').hide()
 }
 
 const showAllFailure = function (response) {
@@ -34,10 +37,12 @@ const showAllFailure = function (response) {
 const showOneSuccess = function (response) {
   $('#view-posts').empty()
   $('#most-recent').empty()
+  $('#show-modal').text('We found it! Close this box to view!')
   $('#auth-message').text('Enjoy!')
   const showOnePost = onePostTemplate({ post: response.post })
   $('#view-posts').append(showOnePost)
   $('form').trigger('reset')
+  $('img').hide()
 }
 
 const showOneFailure = function (response) {

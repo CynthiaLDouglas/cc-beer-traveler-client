@@ -18,8 +18,8 @@ const signInSuccess = function (response) {
   $('#authenticated').show()
   $('#unauthenticated').hide()
   $('#most-recent').empty()
-  const mostRecentHtml = mostRecentTemplate({ posts: response.posts })
-  $('#most-recent').append(mostRecentHtml)
+  // const mostRecentHtml = mostRecentTemplate({ post: post })
+  // $('#most-recent').append(mostRecentHtml)
 }
 
 const signInFailure = function () {
@@ -29,7 +29,7 @@ const signInFailure = function () {
 
 const changePasswordSuccess = function (response) {
   $('#modal-message').text('Your password has been changed.')
-  $('.cp-form').hide()
+  $('#auth-message').text('Your password has been changed.')
   $('form').trigger('reset')
 }
 

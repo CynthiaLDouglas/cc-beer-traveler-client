@@ -10,6 +10,10 @@
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <!-- The font -->
+      <style>
+      @import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
+      </style>
     </head>
 
     <body>
@@ -18,47 +22,42 @@
 <div id="authenticated">
   <!-- NavBar -->
   <nav class="navbar navbar-expand-lg navbar">
-
-    <a class="navbar-brand" href="#">CC Beer Traveler</a>
+    <div class="navbar-brand">CC Beer Traveler
       <!-- Launch Change Password Modal -->
-      <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">
-        Change Password
-      </button>
-      <!-- Sign Out Button -->
-      <button class="btn" id="sign-out" type="submit">Sign Out!</button>
-      <!-- Show All Posts Button -->
-      <button class="btn" id="show-all-posts">Show All Posts</button>
-      <!-- Launch view one post modal -->
-      <button type="button" class="btn" data-toggle="modal" data-target="#showModal">
-        Search a post
-      </button>
-      <!-- Clear Posts Button -->
-      <button class="btn" id="clear-posts">Clear Posts</button>
-
+        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalCenter">Change Password</button>
+        <!-- Sign Out Button -->
+        <button class="btn" id="sign-out" type="submit">Sign Out!</button>
+        <!-- Show All Posts Button -->
+        <button class="btn" id="show-all-posts">Show All Posts</button>
+        <!-- Launch view one post modal -->
+        <button type="button" class="btn" data-toggle="modal" data-target="#showModal">Search a post</button>
+        <!-- Clear Posts Button -->
+        <button class="btn" id="clear-posts">Clear Posts</button>
+    </div>
   </nav>
-    <!-- User message -->
-    <p id="auth-message"></p>
 
-    <!-- buttons to toggle create, delete, and update -->
+    <!-- row containing authenticated msg and create post button -->
+        <div class="main-container">
+          <h4 id="auth-message"></h4>
+
         <div class="post-modify-row">
+          <!-- User message -->
+
+          <!-- most recent posts -->
+          <div id="most-recent"></div>
+
+          <!-- Create post Button -->
           <button class="btn" id="create" data-toggle="collapse" data-target="#create-form">New Post</button>
         </div>
 
-    <!-- most recent posts -->
-    <div class="row-sm-12" id="most-recent"></div>
-
-  <div class="main-container">
-
-    <div class="row">
-
-      <div aria-expanded="false" class="collapse" id="create-form">
-        <!-- Create Blog Post Form -->
-        <form id="create-post">Add Blog Post<br />
-          <input name="post[title]" type="text" placeholder="Enter your title here"><br />
-          <input name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
-          <input name="post[cityLoc]" type="text" placeholder="Enter city here"><br />
-          <input name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
-          <input name="post[content]" type="text" placeholder="Enter content here"><br />
+<!-- Create Blog Post Form -->
+      <div aria-expanded="false" class="collapse new-post" id="create-form">
+        <form id="create-post"><p>Add Blog Post</p><br />
+          <input class="newpost" name="post[title]" type="text" placeholder="Enter your title here">
+          <input class="newpost" name="post[placeName]" type="text" placeholder="Enter name of establishment here"><br />
+          <input class="newpost" name="post[cityLoc]" type="text" placeholder="Enter city here">
+          <input class="newpost" name="post[stateLoc]" type="text" placeholder="Enter state here"><br />
+          <textarea class="post-content col-8" name="post[content]" placeholder="Start your post..."></textarea><br />
           <button class="btn" type="submit">Post</button>
         </form>
       </div>
@@ -68,7 +67,6 @@
         <div class="container" id="view-posts"></div>
     </main>
     </div>
-  </div>
 
       <!-- Change Password Modal -->
       <!-- Modal -->
@@ -83,7 +81,7 @@
             </div>
             <div class="modal-body">
               <!-- Change Password Form -->
-              <p id="modal-message"></p>
+              <h4 id="modal-message"></h4>
               <form class="cp-form" id="change-password">
                 <input name="passwords[old]" type="password" placeholder="Enter your old password here">
                 <input name="passwords[new]" type="password" placeholder=" Enter your new password here">
@@ -103,15 +101,15 @@
             <div class="modal-header">
               <h5 class="modal-title" id="showModalLongTitle">Show Post</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">close &times;</span>
+                <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
               <!-- Form/Button to show one post -->
-              <p id="show-modal"></p>
+              <h4 id="show-modal"></h4>
               <div id="show"></div>
               <form class="s-form" id="show-one-post">
-                <input name="post[id]" type="text" placeholder="Enter id to show"><br />
+                <input name="post[id]" type="text" placeholder="Enter id to show">
                 <button class="btn" type="submit">Show Post</button>
               </form>
             </div>
@@ -125,25 +123,33 @@
     </div>
 
     <!-- unauthenticated -->
-    <div id=unauthenticated>
-    <!-- TITLE -->
-    <h1>CC Beer Travels v1</h1>
-    <!-- User message -->
-    <p id="message"></p>
-    <!-- Sign Up Form -->
-    <form id="sign-up">Sign Up<br />
-      <input name="credentials[email]" type="text" placeholder="your email here"><br />
-      <input name="credentials[password]" type="text" placeholder="your password here"><br />
-      <input name="credentials[password_confirmation]" placeholder="retype password" type="password"><br />
-      <button class="btn">Sign Up!</button>
-    </form>
-    <!-- Sign In Form -->
-    <form style="clear:both" id="sign-in">Sign In<br />
-      <input name="credentials[email]" type="text" placeholder="your email here"><br />
-      <input name="credentials[password]" type="password" placeholder="your password here"><br />
-      <button class="btn" type="submit">Sign In!</button>
-    </form>
-    </div>
+    <div class="container" id="unauthenticated">
+      <!-- TITLE -->
+      <h1>CC Beer Travels v1</h1>
 
+      <!-- User message -->
+      <div class="col-lg-4 col-lg-offset-4">
+        <h4 id="message"></h4>
+      </div>
+
+      <!-- Sign Up Form -->
+      <div class="col-lg-4 col-lg-offset-4">
+        <form id="sign-up">Sign Up<br />
+          <input name="credentials[email]" type="text" placeholder="your email here"><br />
+          <input name="credentials[password]" type="text" placeholder="your password here"><br />
+          <input name="credentials[password_confirmation]" placeholder="retype password" type="password"><br />
+          <button class="btn">Sign Up!</button>
+        </form>
+      </div>
+
+      <!-- Sign In Form -->
+      <div class="col-lg-4 col-lg-offset-4">
+        <form id="sign-in">Sign In<br />
+          <input name="credentials[email]" type="text" placeholder="your email here"><br />
+          <input name="credentials[password]" type="password" placeholder="your password here"><br />
+          <button class="btn" type="submit">Sign In!</button>
+        </form>
+      </div>
+    </div>
   </body>
 </html>

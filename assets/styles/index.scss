@@ -1,6 +1,5 @@
 @import '~bootstrap/scss/bootstrap';
 
-
 #authenticated {
 display: none;
 }
@@ -10,30 +9,27 @@ body {
   background-color: black;
   background-size: cover;
   color: #d4ccce;
-  height: 100%;
+  font-family: 'Sniglet', cursive;
+  min-height: 500px;
+  max-height: 1000px;
 }
 
 .btn {
-  background-color: #7c3f04;
+  background-color: rgba(83, 43, 4, 0.9);
   border-radius: 40%;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.48), 0 17px 50px 0 rgba(0,0,0,0.38);
   color: #d4ccce;
   margin: 6px 4px;
   padding: 5px 10px;
 }
 
-.btn:hover {
-  background-color: #f46f04;
-}
-
 .navbar {
-  background-color: rgba(13, 4, 4, .5);
+  background-color: rgba(51, 26, 4, .5);
 }
 
 .post-modify-row {
   display:flex;
-  justify-content: flex-end;
-
+  justify-content: center;
 }
 
 form {
@@ -45,9 +41,10 @@ main {
 
   section {
     @include make-col-ready;
-    @include media-breakpoint-up(xl) {
-      @include make-col(4);
+    @include media-breakpoint-up(lg) {
+      @include make-col(12);
     }
+
     background: rgba(51, 26, 4, .5);
     border: 1px solid;
     color: #d4ccce;
@@ -60,4 +57,35 @@ main {
       margin-bottom: 0;
     }
   }
+}
+
+.modal-content {
+  background: rgba(52, 36, 4, .65);
+}
+
+textarea {
+  background: rgba(51, 26, 4, .5);
+  color: #d4ccce;
+  height: 300px;
+  width: 100px;
+}
+
+.newpost {
+  width: 25%;
+  margin: 15px;
+  padding: 10px;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: large;
+}
+
+img {
+  max-width: 50%;
+  height: auto;
+}
+
+p {
+  font-weight: bolder;
 }
