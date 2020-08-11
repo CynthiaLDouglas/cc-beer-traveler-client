@@ -7,7 +7,7 @@ wanted to do this project, or came up with this idea.
 
 - [Client Repo](https://github.com/CynthiaLDouglas/cc-beer-traveler-client)
 - [API Repo](https://github.com/CynthiaLDouglas/cc-beer-traveler-api)
-- [Deployed API]https://cryptic-bayou-74848.herokuapp.com/
+- [Deployed API](https://cryptic-bayou-74848.herokuapp.com/)
 - [Deployed Client](https://cynthialdouglas.github.io/cc-beer-traveler-client/)
 
 ## Planning Story
