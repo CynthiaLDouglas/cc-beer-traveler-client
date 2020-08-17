@@ -4,19 +4,7 @@
     <h3>Company Name: {{post.placeName}}</h4>
     <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h5>
     <p>Review:<br />{{post.content}}</p>
-    <button class="btn delete"data-toggle="collapse" data-target=".delete-confirm"> Delete this post </button>
-    <button class="btn update" data-toggle="collapse" data-target=".update-form">Update this Post</button>
+    {{isOwner post.owner ../userId}}
+        {{> deleteButton}}
+        {{> updateButton}}
   </section>
-  <div aria-expanded="false" class="collapse update-form">
-    <form data-id="{{post._id}}" class="update-one-post">Update Blog Post<br />
-      <input name="post[title]" type="text" placeholder="Update your title here"><br />
-      <input name="post[placeName]" type="text" placeholder="Update name of establishment here"><br />
-      <input name="post[cityLoc]" type="text" placeholder="Update city here"><br />
-      <input name="post[stateLoc]" type="text" placeholder="Update state here"><br />
-      <textarea class="post-content col-8" name="post[content]" placeholder="Start your post..."></textarea><br />
-      <button class="btn" type="submit">Update Post</button>
-    </form>
-  </div>
-  <div aria-expanded="false" class="collapse delete-confirm">Are you sure?
-    <button class="btn delete-post" type="submit" data-id="{{post._id}}">Delete Post</button>
-  </div>

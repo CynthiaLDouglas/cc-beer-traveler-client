@@ -40,8 +40,6 @@ const onUpdatePost = function (event) {
   const postId = $(event.target).data('id')
   const form = event.target
   const formData = getFormFields(form)
-  console.log(postId)
-  console.log(formData)
   api.updatePost(postId, formData)
     .then(ui.updateSuccess)
     .catch(ui.updateFailure)

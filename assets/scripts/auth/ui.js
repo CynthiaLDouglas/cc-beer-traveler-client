@@ -13,7 +13,7 @@ const signUpFailure = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#auth-message').text('You are all signed in! Welcome!')
+  $('#auth-message').text(`You are all signed in ${store.user.email}! Welcome!`)
   $('form').trigger('reset')
   $('#authenticated').show()
   $('#unauthenticated').hide()

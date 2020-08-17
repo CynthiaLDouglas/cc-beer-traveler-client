@@ -1,14 +1,11 @@
 {{#each posts as |post|}}
+{{isOwner post.owner ../userId}}
   <section>
-    <h1>Title: {{post.title}}</h3>
+    <h1>Title: {{post.title}}</h1>
     <p>Post ID: {{post._id}}</p>
-    <h3>Company Name: {{post.placeName}}</h4>
-    <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h5>
+    <h3>Company Name: {{post.placeName}}</h3>
+    <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h4>
     <p>Review:<br />{{post.content}}</p>
-      <button class="btn delete"data-toggle="collapse" data-target=".delete-confirm"> Delete this post </button>
+      {{> deleteButton}}
   </section>
-  <div aria-expanded="false" class="collapse delete-confirm">Are you sure?
-    <button class="btn delete-post" type="submit" data-id="{{post._id}}">Delete Post</button>
-  </div>
-
-    {{/each}}
+{{/each}}

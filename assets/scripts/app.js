@@ -21,5 +21,4 @@ $(() => {
   $('#view-posts').on('submit', '.update-one-post', postEvents.onUpdatePost)
   $('#clear-posts').on('click', buttonEvents.onClearPost)
   $('#create').on('click', buttonEvents.toCreatePost)
-  $('textarea').autogrow()
 })
