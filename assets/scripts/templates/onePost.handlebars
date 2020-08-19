@@ -4,12 +4,7 @@
     <h3>Company Name: {{post.placeName}}</h4>
     <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h5>
     <p>Review:<br />{{post.content}}</p>
-    <!-- Comments were only added to help instructors understand my code -->
-    <!-- To determine whether the isOwner is working properly -->
-    {{isOwner post.owner userId}}
-
-    <!-- using the if helper to determine if the created helper isOwner is truthy or falsey -->
-    {{#if isOwner post.owner ../userId}}
+    {{#if (isOwner post.owner userId)}}
       {{> deleteButton}}
       {{> updateButton}}
     {{else}}
