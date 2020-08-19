@@ -1,11 +1,14 @@
 {{#each posts as |post|}}
-{{isOwner post.owner ../userId}}
   <section>
     <h1>Title: {{post.title}}</h1>
     <p>Post ID: {{post._id}}</p>
     <h3>Company Name: {{post.placeName}}</h3>
     <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h4>
     <p>Review:<br />{{post.content}}</p>
+    {{#if isOwner post.owner ../userId}}
       {{> deleteButton}}
+    {{else}}
+      <p>You do not own this content</p>
+    {{/if}}
   </section>
 {{/each}}
