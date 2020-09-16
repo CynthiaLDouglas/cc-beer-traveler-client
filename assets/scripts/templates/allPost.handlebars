@@ -6,7 +6,7 @@
     <h4>Location: {{post.cityLoc}}, {{post.stateLoc}}</h4>
     <p>Review:<br />{{post.content}}</p>
     {{#if (isOwner post.owner ../userId)}}
-      {{> deleteButton}}
+      <p>Need to Update? Click Search.</p>
     {{else}}
       <p>You do not own this content</p>
     {{/if}}
